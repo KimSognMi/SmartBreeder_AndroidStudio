@@ -18,6 +18,7 @@ public class DogInfoSettingActivity extends AppCompatActivity{
     DrawerLayout mDrawerLayout;
     ImageButton menu_button;
 
+
     LinearLayout navi_map;
     LinearLayout navi_shop;
     LinearLayout navi_search;

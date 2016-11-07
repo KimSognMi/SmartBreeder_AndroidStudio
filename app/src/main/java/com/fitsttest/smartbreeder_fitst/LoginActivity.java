@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 /**
  * Created by ksmi0_000 on 2016-11-02.
- * 나도나도나도 바뀌니?
+ * 나도나도나도 바뀌니
  */
 
 public class LoginActivity extends AppCompatActivity {

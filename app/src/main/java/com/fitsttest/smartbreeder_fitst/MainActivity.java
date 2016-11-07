@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         menu_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "navigationDrawer 연결", Toast.LENGTH_SHORT).show();
+
                 mDrawerLayout.openDrawer(GravityCompat.START);
             }
         });

@@ -30,8 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText userid;
     EditText passwd;
     ImageButton signbutton;
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);

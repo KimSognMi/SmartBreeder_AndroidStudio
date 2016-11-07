@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 /**
  * Created by ksmi0_000 on 2016-11-06.
- * 따라라라라라라라라란
+ *
  */
 
 public class DogInfoSettingActivity extends AppCompatActivity{

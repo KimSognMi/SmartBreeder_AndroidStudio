@@ -12,12 +12,12 @@ import android.widget.Toast;
 
 /**
  * Created by ksmi0_000 on 2016-11-06.
+ * 아오 좀 바껴라
  */
 
 public class DogInfoSettingActivity extends AppCompatActivity{
     DrawerLayout mDrawerLayout;
     ImageButton menu_button;
-
 
     LinearLayout navi_map;
     LinearLayout navi_shop;

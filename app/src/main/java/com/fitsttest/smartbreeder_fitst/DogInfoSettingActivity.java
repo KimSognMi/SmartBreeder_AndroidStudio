@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 /**
  * Created by ksmi0_000 on 2016-11-06.
- *
+ *나는나는나는??
  */
 
 public class DogInfoSettingActivity extends AppCompatActivity{

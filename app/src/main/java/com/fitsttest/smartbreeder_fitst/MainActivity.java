@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         menu_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mDrawerLayout.openDrawer(GravityCompat.START);
             }
         });
@@ -58,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "dog 정보 편집 연결", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), DogInfoSettingActivity.class);
-
                 startActivity(intent);
             }
         });
@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "user 정보 편집 연결", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), UserInfoSettingActivity.class);
-
                 startActivity(intent);
             }
         });

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/a_background"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16.5dp"
+        android:layout_marginTop="279.5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="53.5dp"
+            android:layout_height="53.5dp"
+            android:src="@drawable/a_logoimage"
+
+            />
+
+        <ImageView
+            android:layout_width="264.5dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="8.5dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/a_logotext" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="26.5dp"
+        android:layout_marginTop="23.5dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="299dp"
+                android:layout_height="48dp"
+                android:background="@drawable/a_userid" />
+
+            <EditText
+                android:id="@+id/userid"
+                android:layout_width="240dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="60dp"
+                android:background="@null" />
+        </FrameLayout>
+
+        <FrameLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="299dp"
+                android:layout_height="48dp"
+                android:background="@drawable/a_userpw" />
+
+            <EditText
+                android:id="@+id/passwd"
+                android:layout_width="240dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="60dp"
+                android:background="@null" />
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/signbutton"
+            android:layout_width="299dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="45.5dp"
+            android:background="@drawable/a_signbutton"
+            android:onClick="send" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

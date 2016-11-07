@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/titlelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_background"
+        android:orientation="horizontal"
+        app:layout_heightPercent="7.94%"
+        app:layout_widthPercent="100%">
+
+        <ImageButton
+            android:id="@+id/menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toolbar_menu"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginTopPercent="2.43%" />
+
+        <ImageView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/menu_button"
+            android:background="@drawable/toolbar_text"
+            app:layout_marginLeftPercent="18.33%"
+            app:layout_marginTopPercent="3.07%" />
+
+
+    </android.support.percent.PercentRelativeLayout>
+</LinearLayout>

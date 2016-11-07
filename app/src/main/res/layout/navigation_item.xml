@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/navi_background">
+
+    <android.support.percent.PercentFrameLayout
+        android:id="@+id/dogImage"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:id="@+id/dog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginLeftPercent="35%"
+            app:layout_marginTopPercent="10%">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dogPhoto"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/dogsample2" />
+
+            <TextView
+                android:id="@+id/dogname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dogPhoto"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:text="핑핑이"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dogname"
+                android:layout_marginLeft="43dp"
+                android:layout_marginTop="3dp"
+                android:text="3살"
+                android:textSize="20dp" />
+
+            <!--//Perpetua Regular-->
+        </RelativeLayout>
+    </android.support.percent.PercentFrameLayout>
+
+    <android.support.percent.PercentFrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dogImage"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/navi_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_marginLeftPercent="28%"
+            app:layout_marginTopPercent="10%">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/navi_dogmap" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:background="@drawable/navi_dogmaptext" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navi_shop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_marginLeftPercent="28%"
+            app:layout_marginTopPercent="25%">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/navi_shopimage" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:background="@drawable/navi_shoptext" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navi_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_marginLeftPercent="28%"
+            app:layout_marginTopPercent="40%">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/navi_searchdogimage" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:background="@drawable/navi_searchdogtext" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navi_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_marginLeftPercent="28%"
+            app:layout_marginTopPercent="55%">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/navi_requestimage" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:background="@drawable/navi_requesttexet" />
+
+        </LinearLayout>
+
+    </android.support.percent.PercentFrameLayout>
+</RelativeLayout>

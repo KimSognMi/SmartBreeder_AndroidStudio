@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     CircleImageView dogPhoto;
     CircleImageView userPhoto;
 
-    TextView dogname;
+ TextView dogname;
 
 
     @Override
@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         dogname = ( TextView)findViewById(R.id.dogname);
 
-      /*  Intent intent = getIntent();
-        PetDTO dto = (PetDTO)intent.getSerializableExtra("retrieve");
-        dogname.setText(dto.getP_name());*/
+       Intent intent = getIntent();
+        PetDTO dto = (PetDTO)intent.getSerializableExtra("mypage");
+        dogname.setText(dto.getP_name());
 
 
 

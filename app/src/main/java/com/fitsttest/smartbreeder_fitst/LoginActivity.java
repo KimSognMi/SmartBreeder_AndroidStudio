@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.i("TAG", muserid);
         Log.i("TAG", mpasswd);
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://210.125.213.71:8090/BreederAndroid/login.jsp?userid=" + muserid + "&passwd=" + mpasswd;
+        String url = "http://210.125.213.92/BreederAndroid/login.jsp?userid=" + muserid + "&passwd=" + mpasswd;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override

@@ -25,6 +25,8 @@ import java.util.ArrayList;
 /**
  * Created by ksmi0_000 on 2016-11-02.
  *
+ * 자 여기에서 변경을 해볼껭
+ *
  */
 
 public class LoginActivity extends AppCompatActivity {

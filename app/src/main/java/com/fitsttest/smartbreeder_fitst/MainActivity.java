@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.dto.PetDTO;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     CircleImageView dogPhoto;
     CircleImageView userPhoto;
 
+    TextView dogname;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         dogPhoto = (CircleImageView) findViewById(R.id.dogPhoto);
         userPhoto = (CircleImageView) findViewById(R.id.userPhoto);
+
+        dogname = ( TextView)findViewById(R.id.dogname);
+
+      /*  Intent intent = getIntent();
+        PetDTO dto = (PetDTO)intent.getSerializableExtra("retrieve");
+        dogname.setText(dto.getP_name());*/
+
 
 
         menu_button.setOnClickListener(new View.OnClickListener() {

@@ -3,10 +3,8 @@
     package="com.fitsttest.smartbreeder_fitst">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-     </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
-     android:launchMode="singleTask"-->
 
     <application
 
@@ -25,9 +23,10 @@
         <activity android:name=".DogInfoSettingActivity" />
         <activity android:name=".UserInfoSettingActivity" />
         <activity android:name=".TreeMappingActivity" />
-        <activity android:name=".ConvenienceActivity" />
         <activity android:name=".SearchDogActivity"/>
         <activity android:name=".RequestActivity"/>
+
+
 
     </application>
 

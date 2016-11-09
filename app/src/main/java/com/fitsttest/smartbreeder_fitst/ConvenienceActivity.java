@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 /**
- * Created by ksmi0_000 on 2016-11-06.
+ * Created by ksmi0_000 on 2016-11-09.
  */
 
-public class ConvenienceActivity extends AppCompatActivity {
+public class ConvenienceActivity extends AppCompatActivity{
     DrawerLayout mDrawerLayout;
     ImageButton menu_button;
 
@@ -22,10 +22,10 @@ public class ConvenienceActivity extends AppCompatActivity {
     LinearLayout navi_shop;
     LinearLayout navi_search;
     LinearLayout navi_request;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.convenience);
-
+        setContentView(R.layout.doginfosettiong);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         menu_button = (ImageButton) findViewById(R.id.menu_button);
@@ -33,7 +33,6 @@ public class ConvenienceActivity extends AppCompatActivity {
         navi_shop = (LinearLayout) findViewById(R.id.navi_shop);
         navi_search = (LinearLayout) findViewById(R.id.navi_search);
         navi_request = (LinearLayout) findViewById(R.id.navi_request);
-
 
         menu_button.setOnClickListener(new View.OnClickListener() {
             @Override

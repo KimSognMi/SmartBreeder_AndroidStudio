@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 /**
  * Created by ksmi0_000 on 2016-11-09.
+ * 바뀌니 바뀌니
  */
 
 public class ConvenienceActivity extends AppCompatActivity{

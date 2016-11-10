@@ -278,8 +278,6 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show();
     }
 
-
-
     @Override
     @Deprecated
     public void onCalloutBalloonOfPOIItemTouched(MapView mapView, MapPOIItem mapPOIItem) {

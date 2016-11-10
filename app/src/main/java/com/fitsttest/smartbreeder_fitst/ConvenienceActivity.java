@@ -31,17 +31,17 @@ import java.util.List;
 public class ConvenienceActivity extends FragmentActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener {
 
     private static final String LOG_TAG = "ConvenienceActivity";
-    private MapView mMapView;
-    private EditText mEditTextQuery;
-    private Button mButtonSearch;
-    private HashMap<Integer, Item> mTagItemMap = new HashMap<Integer, Item>();
+        private MapView mMapView;
+        private EditText mEditTextQuery;
+        private Button mButtonSearch;
+        private HashMap<Integer, Item> mTagItemMap = new HashMap<Integer, Item>();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.convenience);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.convenience);
 
-        mMapView = (MapView) findViewById(R.id.map_view);
+            mMapView = (MapView) findViewById(R.id.map_view);
         mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);
         mMapView.setMapViewEventListener(this);
         mMapView.setPOIItemEventListener(this);

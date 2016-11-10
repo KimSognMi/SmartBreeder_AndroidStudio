@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import net.daum.mf.map.api.CameraUpdateFactory;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 import net.daum.mf.map.api.MapPointBounds;
+import net.daum.mf.map.api.MapReverseGeoCoder;
 import net.daum.mf.map.api.MapView;
 
 import java.io.IOException;
@@ -28,22 +30,29 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 
-public class ConvenienceActivity extends FragmentActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener {
+public class ConvenienceActivity extends FragmentActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener, MapView.CurrentLocationEventListener, MapReverseGeoCoder.ReverseGeoCodingResultListener {
 
     private static final String LOG_TAG = "ConvenienceActivity";
-        private MapView mMapView;
-        private EditText mEditTextQuery;
-        private Button mButtonSearch;
-        private HashMap<Integer, Item> mTagItemMap = new HashMap<Integer, Item>();
+    private MapView mMapView;
+    private EditText mEditTextQuery;
+    private Button mButtonSearch;
+    private HashMap<Integer, Item> mTagItemMap = new HashMap<Integer, Item>();
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.convenience);
+    private final int MENU_LOCATION = Menu.FIRST;
+    private final int MENU_REVERSE_GEO = Menu.FIRST + 1;
 
-            mMapView = (MapView) findViewById(R.id.map_view);
+    private MapReverseGeoCoder mReverseGeoCoder = null;
+    private boolean isUsingCustomLocationMarker = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.convenience);
+
+        mMapView = (MapView) findViewById(R.id.map_view);
         mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);
         mMapView.setMapViewEventListener(this);
+        mMapView.setCurrentLocationEventListener(this);
         mMapView.setPOIItemEventListener(this);
         mMapView.setCalloutBalloonAdapter(new CustomCalloutBalloonAdapter());
 
@@ -82,6 +91,48 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOff);
+        mMapView.setShowCurrentLocationMarker(false);
+    }
+
+    @Override
+    public void onCurrentLocationUpdate(MapView mapView, MapPoint currentLocation, float accuracyInMeters) {
+        MapPoint.GeoCoordinate mapPointGeo = currentLocation.getMapPointGeoCoord();
+        Log.i(LOG_TAG, String.format("MapView onCurrentLocationUpdate (%f,%f) accuracy (%f)", mapPointGeo.latitude, mapPointGeo.longitude, accuracyInMeters));
+    }
+
+    @Override
+    public void onCurrentLocationDeviceHeadingUpdate(MapView mapView, float v) {
+
+    }
+
+    @Override
+    public void onCurrentLocationUpdateFailed(MapView mapView) {
+
+    }
+
+    @Override
+    public void onCurrentLocationUpdateCancelled(MapView mapView) {
+
+    }
+
+    @Override
+    public void onReverseGeoCoderFoundAddress(MapReverseGeoCoder mapReverseGeoCoder, String s) {
+        mapReverseGeoCoder.toString();
+        onFinishReverseGeoCoding(s);
+    }
+
+    @Override
+    public void onReverseGeoCoderFailedToFindAddress(MapReverseGeoCoder mapReverseGeoCoder) {
+        onFinishReverseGeoCoding("Fail");
+    }
+
+    private void onFinishReverseGeoCoding(String result) {
+        Toast.makeText(getApplicationContext(), "Reverse Geo-coding : " + result, Toast.LENGTH_SHORT).show();
+    }
     class CustomCalloutBalloonAdapter implements CalloutBalloonAdapter {
 
         private final View mCalloutBalloon;
@@ -127,7 +178,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         Log.i(LOG_TAG, "MapView had loaded. Now, MapView APIs could be called safely");
 
         mMapView.setMapCenterPointAndZoomLevel(MapPoint.mapPointWithGeoCoord(37.537229, 127.005515), 2, true);
-
+        mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
         Searcher searcher = new Searcher();
         String query = mEditTextQuery.getText().toString();
         double latitude = 37.537229;

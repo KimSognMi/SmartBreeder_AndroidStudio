@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     String result2=login.result;
 */
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +60,13 @@ public class MainActivity extends AppCompatActivity {
         Log.i("TAG", "xxx >>" + xxx);
 
         String A=xxx;
-        StringTokenizer st1=new StringTokenizer(A,"/");
+        StringTokenizer st0=new StringTokenizer(A,",");
+        String result01=st0.nextToken();
+        String result02=st0.nextToken();
+        Log.i("TAG" , ">>"+ result01);
+        Log.i("TAG" , ">>"+ result02);
+
+        StringTokenizer st1=new StringTokenizer(result01,"/");
 
            String result1=st1.nextToken();
         result2=st1.nextToken();
@@ -107,6 +114,7 @@ username.setText(result4);
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "dog 정보 편집 연결", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), DogInfoSettingActivity.class);
+
                 startActivity(intent);
             }
         });

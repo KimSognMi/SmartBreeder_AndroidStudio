@@ -1,21 +1,16 @@
 package com.fitsttest.smartbreeder_fitst;
 
+
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,14 +28,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by ksmi0_000 on 2016-11-09.
- * 바뀌니 바뀌니
- *
- *
- */
-
-public class ConvenienceActivity extends FragmentActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener  {
+public class ConvenienceActivity extends FragmentActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener {
 
     private static final String LOG_TAG = "SearchDemoActivity";
     private MapView mMapView;
@@ -48,32 +36,18 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
     private Button mButtonSearch;
     private HashMap<Integer, Item> mTagItemMap = new HashMap<Integer, Item>();
 
-    DrawerLayout mDrawerLayout;
-    ImageButton menu_button;
-
-    LinearLayout navi_map;
-    LinearLayout navi_shop;
-    LinearLayout navi_search;
-    LinearLayout navi_request;
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.convenience);
+        setContentView(R.layout.activity_main);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        menu_button = (ImageButton) findViewById(R.id.menu_button);
-        navi_map = (LinearLayout) findViewById(R.id.navi_map);
-        navi_shop = (LinearLayout) findViewById(R.id.navi_shop);
-        navi_search = (LinearLayout) findViewById(R.id.navi_search);
-        navi_request = (LinearLayout) findViewById(R.id.navi_request);
         mMapView = (MapView) findViewById(R.id.map_view);
         mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);
         mMapView.setMapViewEventListener(this);
         mMapView.setPOIItemEventListener(this);
         mMapView.setCalloutBalloonAdapter(new CustomCalloutBalloonAdapter());
 
-        mEditTextQuery = (EditText) findViewById(R.id.editTextQuery); // 검색창
-
+        mEditTextQuery = (EditText) findViewById(R.id.editTextQuery);
         mButtonSearch = (Button) findViewById(R.id.buttonSearch); // 검색버튼
         mButtonSearch.setOnClickListener(new View.OnClickListener() { // 검색버튼 클릭 이벤트 리스너
             @Override
@@ -104,51 +78,6 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
                         showToast("API_KEY의 제한 트래픽이 초과되었습니다.");
                     }
                 });
-            }
-        });
-
-        menu_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDrawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
-        navi_map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "족보창 연결", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), TreeMappingActivity.class);
-                mDrawerLayout.closeDrawers();
-                startActivity(intent);
-            }
-        });
-        navi_shop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "근처 편의시설 검색 연결", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), ConvenienceActivity.class);
-                mDrawerLayout.closeDrawers();
-                startActivity(intent);
-            }
-        });
-        navi_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "근처 애견 검색 연결", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), SearchDogActivity.class);
-                mDrawerLayout.closeDrawers();
-                startActivity(intent);
-
-            }
-        });
-        navi_request.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "신청 현황 확인 페이지 연결", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), RequestActivity.class);
-                mDrawerLayout.closeDrawers();
-                startActivity(intent);
-
             }
         });
     }
@@ -182,6 +111,13 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
 
     }
 
+    //다음이 제공하는 MapView객체 생성 및 API Key 설정
+       /* MapView mapView = new MapView(this);
+        mapView.setDaumMapApiKey("80cf51de78f5d9aeaacfba4074934ec2");
+
+        //xml에 선언된 map_view 레이아웃을 찾아온 후, 생성한 MapView객체 추가
+        RelativeLayout container = (RelativeLayout) findViewById(R.id.map_view);
+        container.addView(mapView);*/
     private void hideSoftKeyboard() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(mEditTextQuery.getWindowToken(), 0);
@@ -335,5 +271,4 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
     @Override
     public void onMapViewZoomLevelChanged(MapView mapView, int zoomLevel) {
     }
-
 }

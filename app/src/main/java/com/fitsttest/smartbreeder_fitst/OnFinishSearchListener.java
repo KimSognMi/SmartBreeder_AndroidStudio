@@ -1,6 +1,6 @@
 package com.fitsttest.smartbreeder_fitst;
 
-import com.shoptest.maptest.Item;
+import com.fitsttest.smartbreeder_fitst.Item;
 
 import java.util.List;
 

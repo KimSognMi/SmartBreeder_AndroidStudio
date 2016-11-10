@@ -30,7 +30,7 @@ import java.util.List;
 
 public class ConvenienceActivity extends FragmentActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener {
 
-    private static final String LOG_TAG = "SearchDemoActivity";
+    private static final String LOG_TAG = "ConvenienceActivity";
     private MapView mMapView;
     private EditText mEditTextQuery;
     private Button mButtonSearch;
@@ -39,7 +39,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.convenience);
 
         mMapView = (MapView) findViewById(R.id.map_view);
         mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);

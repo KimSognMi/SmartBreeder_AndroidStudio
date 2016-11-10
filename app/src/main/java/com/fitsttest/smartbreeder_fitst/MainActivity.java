@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
        Intent intent = getIntent();
         PetDTO dto = (PetDTO)intent.getSerializableExtra("mypage");
-        dogname.setText(dto.getP_name());
+        //dogname.setText(dto.getP_name());
 
 
 

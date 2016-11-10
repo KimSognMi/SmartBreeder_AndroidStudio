@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -22,9 +24,45 @@ public class UserInfoSettingActivity extends AppCompatActivity{
     LinearLayout navi_shop;
     LinearLayout navi_search;
     LinearLayout navi_request;
+
+    TextView userid;
+    TextView username;
+    TextView phone;
+    TextView address1;
+    TextView address2;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userinfosettiong);
+
+        String result2=getIntent().getExtras().getString("result2");
+        Log.i("TAG", "result2 >>" + result2);
+
+        String result4=getIntent().getExtras().getString("result4");
+        String result5=getIntent().getExtras().getString("result5");
+        String result8=getIntent().getExtras().getString("result8");
+        String result9=getIntent().getExtras().getString("result9");
+
+        userid = ( TextView)findViewById(R.id.userid);
+        username = ( TextView)findViewById(R.id.username);
+        phone = ( TextView)findViewById(R.id.phone);
+        address1 = ( TextView)findViewById(R.id.address1);
+        address2 = ( TextView)findViewById(R.id.address2);
+
+        userid.setInputType(0);
+        username.setInputType(0);
+        phone.setInputType(0);
+        address1.setInputType(0);
+        address2.setInputType(0);
+
+        address1.setHorizontallyScrolling(false);
+
+        userid.setText(result2);
+        username.setText(result4);
+        phone.setText(result5);
+        address1.setText(result8);
+        address2.setText(result9);
+
 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);

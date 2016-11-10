@@ -54,47 +54,132 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             />
+
         <LinearLayout
-            android:id="@+id/settingdogname"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="p_num : "
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/p_num"
+                android:text="내개 : "
+                android:textSize="25dp"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_below="@id/uploaddogphoto"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
-            >
+            android:id="@+id/linearLayout">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이름 : "
+                android:text="kkcnumber : "
                 android:textSize="25dp"/>
-            <EditText
-                android:textSize="25dp"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="sdlkfmlsdmfks"
-                />
+                android:id="@+id/p_kkcnumber"
+                android:text="이름 "
+                android:textSize="25dp"/>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/settingdogage"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/settingdogname"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"
-            >
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="나이 : "
+                android:text="p_name : "
                 android:textSize="25dp"/>
-            <EditText
-                android:textSize="25dp"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="3"
-                />
+                android:id="@+id/p_name"
+                android:text="이름 : "
+                android:textSize="25dp"/>
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_above="@+id/linearLayout2"
+            android:layout_alignLeft="@+id/linearLayout2"
+            android:layout_alignStart="@+id/linearLayout2"
+            android:layout_marginBottom="44dp"
+            android:id="@+id/linearLayout4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="p_age : "
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/p_age"
+                android:text="나이 "
+                android:textSize="25dp"/>
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout2"
+            android:layout_above="@+id/linearLayout3"
+            android:layout_alignLeft="@+id/linearLayout3"
+            android:layout_alignStart="@+id/linearLayout3"
+            android:layout_marginBottom="43dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="p_birth: "
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/p_birth"
+                android:text="이름"
+                android:textSize="25dp"/>
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout"
+            android:layout_marginBottom="57dp"
+            android:id="@+id/linearLayout3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="p_type"
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/p_type"
+                android:text="이름 "
+                android:textSize="25dp"/>
         </LinearLayout>
 
 

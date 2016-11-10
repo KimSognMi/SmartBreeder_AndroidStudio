@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                 String pw = passwd.getText().toString();
 
                 try {
-                    URL url = new URL("http://210.125.213.92/BreederAndroid/login.jsp?userid="+id+"&passwd="+pw);
+                    URL url = new URL("http://210.125.213.91:8090/BreederAndroid/login.jsp?userid="+id+"&passwd="+pw);
                     HttpURLConnection conn =
                             (HttpURLConnection)  url.openConnection();
                     //conn.setRequestProperty("Accept-Encoding", "UTF-8");
@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                     conn.setChunkedStreamingMode(0);
                     OutputStream out =
                             new BufferedOutputStream(conn.getOutputStream());
-                    PrintWriter xx = new PrintWriter(out );
+                    PrintWriter xx = new PrintWriter(out);
                     String mesg = "userid="+userid.getText().toString()+"&passwd="+passwd.getText().toString();
                     xx.print(mesg);
                     xx.close();

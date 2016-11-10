@@ -39,9 +39,16 @@ public class MainActivity extends AppCompatActivity {
     TextView dogtype;
     String result;
 
+    String result2;
+
+    String result4;
+    String result5;
+    String result8;
+    String result9;
  /*   LoginActivity login=new LoginActivity();
     String result2=login.result;
 */
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,17 +60,23 @@ public class MainActivity extends AppCompatActivity {
         Log.i("TAG", "xxx >>" + xxx);
 
         String A=xxx;
-        StringTokenizer st1=new StringTokenizer(A,"/");
+        StringTokenizer st0=new StringTokenizer(A,",");
+        String result01=st0.nextToken();
+        String result02=st0.nextToken();
+        Log.i("TAG" , ">>"+ result01);
+        Log.i("TAG" , ">>"+ result02);
+
+        StringTokenizer st1=new StringTokenizer(result01,"/");
 
            String result1=st1.nextToken();
-        String result2=st1.nextToken();
+        result2=st1.nextToken();
         String result3=st1.nextToken();
-        String result4=st1.nextToken();
-        String result5=st1.nextToken();
+         result4=st1.nextToken();
+         result5=st1.nextToken();
         String result6=st1.nextToken();
-        String result7=st1.nextToken();
-        String result8=st1.nextToken();
-        String result9=st1.nextToken();
+         String result7=st1.nextToken();
+         result8=st1.nextToken();
+         result9=st1.nextToken();
             Log.i("TAG" , ">>"+ result4);
 
 
@@ -101,6 +114,7 @@ username.setText(result4);
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "dog 정보 편집 연결", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), DogInfoSettingActivity.class);
+
                 startActivity(intent);
             }
         });
@@ -109,6 +123,13 @@ username.setText(result4);
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "user 정보 편집 연결", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), UserInfoSettingActivity.class);
+
+                intent.putExtra("result2",result2);
+                intent.putExtra("result4",result4);
+                intent.putExtra("result5",result5);
+                intent.putExtra("result8",result8);
+                intent.putExtra("result9",result9);
+
                 startActivity(intent);
             }
         });

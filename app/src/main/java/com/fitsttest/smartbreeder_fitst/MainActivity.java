@@ -5,13 +5,17 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dto.MemberDTO;
 import com.dto.PetDTO;
+
+import java.util.StringTokenizer;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -30,12 +34,39 @@ public class MainActivity extends AppCompatActivity {
     CircleImageView userPhoto;
 
  TextView dogname;
+    TextView username;
+    TextView userid;
+    TextView dogtype;
+    String result;
 
+ /*   LoginActivity login=new LoginActivity();
+    String result2=login.result;
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Intent intent = getIntent();
+        String xxx=getIntent().getExtras().getString("xxx");
+        Log.i("TAG", "xxx >>" + xxx);
+
+        String A=xxx;
+        StringTokenizer st1=new StringTokenizer(A,"/");
+
+           String result1=st1.nextToken();
+        String result2=st1.nextToken();
+        String result3=st1.nextToken();
+        String result4=st1.nextToken();
+        String result5=st1.nextToken();
+        String result6=st1.nextToken();
+        String result7=st1.nextToken();
+        String result8=st1.nextToken();
+        String result9=st1.nextToken();
+            Log.i("TAG" , ">>"+ result4);
+
+
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         menu_button = (ImageButton) findViewById(R.id.menu_button);
@@ -48,10 +79,12 @@ public class MainActivity extends AppCompatActivity {
         userPhoto = (CircleImageView) findViewById(R.id.userPhoto);
 
         dogname = ( TextView)findViewById(R.id.dogname);
+        username = ( TextView)findViewById(R.id.username);
+        userid = ( TextView)findViewById(R.id.userid);
+        dogtype = ( TextView)findViewById(R.id.dogtype);
 
-       Intent intent = getIntent();
-        PetDTO dto = (PetDTO)intent.getSerializableExtra("mypage");
-        //dogname.setText(dto.getP_name());
+username.setText(result4);
+        userid.setText(result2);
 
 
 

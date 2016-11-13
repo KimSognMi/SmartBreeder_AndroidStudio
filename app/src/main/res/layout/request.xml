@@ -74,7 +74,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_below="@+id/menu_button"
                     android:layout_marginLeft="25dp"
-                    android:textSize="30dp"
+                    android:textSize="20dp"
                     android:text="신청 받았어요." />
 
                 <LinearLayout
@@ -102,7 +102,7 @@
                         android:layout_marginTop="65dp"
                         android:src="@drawable/db"
                         android:textSize="45dp"
-                        android:onClick="onClick"
+
                         android:background="#00000000"
                         android:layout_weight="0.00" />
 
@@ -136,75 +136,85 @@
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="30dp"
+                    android:textSize="20dp"
                     android:layout_below="@+id/menu_button"
                     android:layout_marginLeft="25dp"
                     android:text="신청 했어요." />
 
-                <LinearLayout
-                    android:orientation="horizontal"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:id="@+id/firstdog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/uploaddogphoto2"
+                            android:layout_below="@+id/request"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:src="@drawable/a"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_weight="0.00"/>
+                        <Button
+                            android:text="대기중"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/button22"
+                            android:layout_marginLeft="55dp"
+                            android:textSize="35dp"
+                            android:background="#00000000"
+                            android:layout_weight="0.00"
+                            android:layout_marginStart="55dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_below="@+id/b"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/uploaddogphoto2"
-                        android:layout_below="@+id/request"
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        android:src="@drawable/a"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_weight="0.00" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_toRightOf="@+id/firstdog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerHorizontal="true">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/uploaddogphoto3"
+                            android:layout_below="@+id/request"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:src="@drawable/we"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_weight="0.00" />
+                        <ImageButton
+                            android:text="대기중"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/button3"
+                            android:background="@drawable/wait"
+                            android:layout_alignBaseline="@+id/button22"
+                            android:layout_alignBottom="@+id/button22"
+                            android:layout_toRightOf="@+id/button22"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="15dp"
+                            />
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/uploaddogphoto3"
-                        android:layout_below="@+id/request"
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        android:src="@drawable/we"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_weight="0.00" />
+                    </LinearLayout>
+                </RelativeLayout>
 
-
-                </LinearLayout>
 
 
             </LinearLayout>
         </android.support.percent.PercentRelativeLayout>
 
-        <ImageButton
-            android:text="대기중"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="35dp"
-            android:id="@+id/button3"
-            android:onClick="onClick"
-            android:background="#00000000"
-            android:src="@drawable/db"
-            android:layout_alignBaseline="@+id/button22"
-            android:layout_alignBottom="@+id/button22"
-            android:layout_toRightOf="@+id/button22"
-            android:layout_marginLeft="91dp"
-            android:layout_marginStart="91dp" />
 
-        <Button
-            android:text="대기중"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button22"
-            android:layout_marginLeft="55dp"
-            android:textSize="35dp"
-            android:onClick=""
-            android:background="#00000000"
-            android:layout_weight="0.00"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="7dp"
-            android:layout_below="@+id/b"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+
+
 
 
     </RelativeLayout>

@@ -57,35 +57,43 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/selectconvenience_background"
                 android:orientation="horizontal">
 
 
-                <Button
+                <ImageButton
+                    android:layout_marginTop="4dp"
                     android:id="@+id/cafe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="애견카페">
+                    android:background="@drawable/cafe">
 
                     <requestFocus />
-                </Button>
+                </ImageButton>
 
-                <Button
+                <ImageButton
+                    android:layout_marginTop="4dp"
                     android:id="@+id/hospital"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="동물병원" />
+                    android:layout_marginLeft="1.5dp"
+                    android:background="@drawable/hospital" />
 
-                <Button
+                <ImageButton
+                    android:layout_marginTop="4dp"
                     android:id="@+id/park"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="애견공원" />
+                    android:layout_marginLeft="2dp"
+                    android:background="@drawable/park" />
 
-                <Button
+                <ImageButton
+                    android:layout_marginTop="4dp"
                     android:id="@+id/shop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="애견샵" />
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/shop" />
 
             </LinearLayout>
 

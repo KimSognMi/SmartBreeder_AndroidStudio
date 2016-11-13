@@ -20,17 +20,17 @@ import java.util.StringTokenizer;
  */
 
 public class RequestActivity extends AppCompatActivity {
-    DrawerLayout mDrawerLayout;
-    ImageButton menu_button;
+    private DrawerLayout mDrawerLayout;
+    private ImageButton menu_button;
 
-    LinearLayout navi_map;
-    LinearLayout navi_shop;
-    LinearLayout navi_search;
-    LinearLayout navi_request;
+    private  LinearLayout navi_map;
+    private  LinearLayout navi_shop;
+    private  LinearLayout navi_search;
+    private  LinearLayout navi_request;
 
-    ImageButton button2;
-    ImageButton button3;
-    Button button22;
+    private ImageButton button2;
+    private ImageButton button3;
+    private  Button button22;
 
     String rq1;
     String rq2;
@@ -115,17 +115,17 @@ public class RequestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "받은 애견 정보", Toast.LENGTH_SHORT).show();
-                Intent intent2 = new Intent(getApplicationContext(), DogRetrieveActivity2.class);
+                Intent intent = new Intent(RequestActivity.this, DogRetrieveActivity2.class);
 
-                intent2.putExtra("rq01", rq01);
-                intent2.putExtra("rq02", rq02);
-                intent2.putExtra("rq03", rq03);
-                intent2.putExtra("rq05", rq05);
-                intent2.putExtra("rq06", rq06);
-                intent2.putExtra("rq07", rq07);
-                intent2.putExtra("rq09", rq09);
+                intent.putExtra("rq01", rq01);
+                intent.putExtra("rq02", rq02);
+                intent.putExtra("rq03", rq03);
+                intent.putExtra("rq05", rq05);
+                intent.putExtra("rq06", rq06);
+                intent.putExtra("rq07", rq07);
+                intent.putExtra("rq09", rq09);
 
-                startActivity(intent2);
+                startActivity(intent);
             }
         });
 

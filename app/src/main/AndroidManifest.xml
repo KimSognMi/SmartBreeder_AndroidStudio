@@ -28,7 +28,7 @@
         <activity android:name=".RequestActivity"/>
         <activity android:name=".ConvenienceActivity"/>
         <activity android:name=".DogRetrieveActivity"/>
-        
+        <activity android:name=".DogRetrieveActivity2"/>
 
     </application>
 

@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "신청 현황 확인 페이지 연결", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), RequestActivity.class);
+
 
                 Thread t = new Thread(new Runnable() {
                     @Override
@@ -235,14 +235,11 @@ public class MainActivity extends AppCompatActivity {
 
                                 Intent intent = new Intent(getApplicationContext(), RequestActivity.class);
                                 intent.putExtra("xxx",xxx);
-                               /* mDrawerLayout.closeDrawers();*/
                                 startActivity(intent);
                                 finish();
                             }else{
-
+                                Toast.makeText(getApplicationContext(), "오류야 오류", Toast.LENGTH_SHORT).show();
                             }
-
-
                             in.close();
                             conn.disconnect();
                         }catch (Exception e){
@@ -252,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 t.start();
-                startActivity(intent);
+
             }
         });
 

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,10 +37,10 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
     private MapView mMapView;
     private EditText mEditTextQuery;
     private Button mButtonSearch;
-    private Button cafe;
-    private Button hospital;
-    private Button park;
-    private Button shop;
+    private ImageButton cafe;
+    private ImageButton hospital;
+    private ImageButton park;
+    private ImageButton shop;
     private HashMap<Integer, Item> mTagItemMap = new HashMap<Integer, Item>();
 
     private final int MENU_LOCATION = Menu.FIRST;
@@ -54,10 +55,10 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         setContentView(R.layout.convenience);
 
         mMapView = (MapView) findViewById(R.id.map_view);
-        cafe = (Button) findViewById(R.id.cafe);
-        hospital = (Button) findViewById(R.id.hospital);
-        park = (Button) findViewById(R.id.park);
-        shop = (Button) findViewById(R.id.shop);
+        cafe = (ImageButton) findViewById(R.id.cafe);
+        hospital = (ImageButton) findViewById(R.id.hospital);
+        park = (ImageButton) findViewById(R.id.park);
+        shop = (ImageButton) findViewById(R.id.shop);
         mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);
         mMapView.setMapViewEventListener(this);
         mMapView.setCurrentLocationEventListener(this);
@@ -66,7 +67,6 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         cafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String qcafe = cafe.getText().toString();
                 MapPoint.GeoCoordinate geoCoordinate = mMapView.getMapCenterPoint().getMapPointGeoCoord();
                 double latitude = geoCoordinate.latitude; // 위도
                 double longitude = geoCoordinate.longitude; // 경도
@@ -75,7 +75,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
                 String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
 
                 Searcher searcher = new Searcher(); // net.daum.android.map.openapi.search.Searcher
-                searcher.searchKeyword(getApplicationContext(), qcafe, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+                searcher.searchKeyword(getApplicationContext(), "애견카페", latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
                     @Override
                     public void onSuccess(List<Item> itemList) {
                         mMapView.removeAllPOIItems(); // 기존 검색 결과 삭제
@@ -92,7 +92,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         hospital.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String qhospital = hospital.getText().toString();
+
                 MapPoint.GeoCoordinate geoCoordinate = mMapView.getMapCenterPoint().getMapPointGeoCoord();
                 double latitude = geoCoordinate.latitude; // 위도
                 double longitude = geoCoordinate.longitude; // 경도
@@ -101,7 +101,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
                 String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
 
                 Searcher searcher = new Searcher(); // net.daum.android.map.openapi.search.Searcher
-                searcher.searchKeyword(getApplicationContext(), qhospital, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+                searcher.searchKeyword(getApplicationContext(), "동물병원", latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
                     @Override
                     public void onSuccess(List<Item> itemList) {
                         mMapView.removeAllPOIItems(); // 기존 검색 결과 삭제
@@ -118,7 +118,6 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         park.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String qpark = park.getText().toString();
                 MapPoint.GeoCoordinate geoCoordinate = mMapView.getMapCenterPoint().getMapPointGeoCoord();
                 double latitude = geoCoordinate.latitude; // 위도
                 double longitude = geoCoordinate.longitude; // 경도
@@ -127,7 +126,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
                 String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
 
                 Searcher searcher = new Searcher(); // net.daum.android.map.openapi.search.Searcher
-                searcher.searchKeyword(getApplicationContext(), qpark, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+                searcher.searchKeyword(getApplicationContext(), "애견공원", latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
                     @Override
                     public void onSuccess(List<Item> itemList) {
                         mMapView.removeAllPOIItems(); // 기존 검색 결과 삭제
@@ -144,7 +143,6 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         shop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String qshop = shop.getText().toString();
                 MapPoint.GeoCoordinate geoCoordinate = mMapView.getMapCenterPoint().getMapPointGeoCoord();
                 double latitude = geoCoordinate.latitude; // 위도
                 double longitude = geoCoordinate.longitude; // 경도
@@ -153,7 +151,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
                 String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
 
                 Searcher searcher = new Searcher(); // net.daum.android.map.openapi.search.Searcher
-                searcher.searchKeyword(getApplicationContext(), qshop, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+                searcher.searchKeyword(getApplicationContext(), "애견샵", latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
                     @Override
                     public void onSuccess(List<Item> itemList) {
                         mMapView.removeAllPOIItems(); // 기존 검색 결과 삭제

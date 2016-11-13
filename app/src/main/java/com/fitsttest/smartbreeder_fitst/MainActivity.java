@@ -174,10 +174,10 @@ public class MainActivity extends AppCompatActivity {
         navi_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "족보창 연결", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), TreeMappingActivity.class);
+                Toast.makeText(getApplicationContext(), "족보창 연결 준비중 입니다.", Toast.LENGTH_SHORT).show();
+                /*Intent intent = new Intent(getApplicationContext(), TreeMappingActivity.class);
                 mDrawerLayout.closeDrawers();
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
         navi_shop.setOnClickListener(new View.OnClickListener() {
@@ -192,10 +192,10 @@ public class MainActivity extends AppCompatActivity {
         navi_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "근처 애견 검색 연결", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), SearchDogActivity.class);
+                Toast.makeText(getApplicationContext(), "근처 애견 검색 연결 준비중 입니다.", Toast.LENGTH_SHORT).show();
+                /*Intent intent = new Intent(getApplicationContext(), SearchDogActivity.class);
                 mDrawerLayout.closeDrawers();
-                startActivity(intent);
+                startActivity(intent);*/
 
             }
         });
@@ -203,8 +203,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "신청 현황 확인 페이지 연결", Toast.LENGTH_SHORT).show();
-
-
                 Thread t = new Thread(new Runnable() {
                     @Override
                     public void run() {

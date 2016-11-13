@@ -15,6 +15,14 @@ import android.widget.Toast;
 import com.dto.MemberDTO;
 import com.dto.PetDTO;
 
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.StringTokenizer;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -33,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     CircleImageView dogPhoto;
     CircleImageView userPhoto;
 
- TextView dogname;
+    TextView dogname;
     TextView username;
     TextView userid;
     TextView dogtype;
@@ -45,10 +53,17 @@ public class MainActivity extends AppCompatActivity {
     String result5;
     String result8;
     String result9;
+
+    String r3;
+    String r4;
+    String r5;
+    String r6;
+    String r7;
+    String r8;
+    String r10;
  /*   LoginActivity login=new LoginActivity();
     String result2=login.result;
 */
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("TAG", "xxx >>" + xxx);
 
         String A=xxx;
-        StringTokenizer st0=new StringTokenizer(A,",");
+        StringTokenizer st0=new StringTokenizer(A,"&");
         String result01=st0.nextToken();
         String result02=st0.nextToken();
         Log.i("TAG" , ">>"+ result01);
@@ -68,17 +83,30 @@ public class MainActivity extends AppCompatActivity {
 
         StringTokenizer st1=new StringTokenizer(result01,"/");
 
-           String result1=st1.nextToken();
+        String result1=st1.nextToken();
         result2=st1.nextToken();
         String result3=st1.nextToken();
-         result4=st1.nextToken();
-         result5=st1.nextToken();
+        result4=st1.nextToken();
+        result5=st1.nextToken();
         String result6=st1.nextToken();
-         String result7=st1.nextToken();
-         result8=st1.nextToken();
-         result9=st1.nextToken();
-            Log.i("TAG" , ">>"+ result4);
+        String result7=st1.nextToken();
+        result8=st1.nextToken();
+        result9=st1.nextToken();
 
+        StringTokenizer st2=new StringTokenizer(result02,"/");
+
+        String r1=st2.nextToken();
+        String r2=st2.nextToken();
+        r3=st2.nextToken();
+        r4=st2.nextToken();
+        r5=st2.nextToken();
+        r6=st2.nextToken();
+        r7=st2.nextToken();
+        r8=st2.nextToken();
+        String r9=st2.nextToken();
+        r10=st2.nextToken();
+        String r11=st2.nextToken();
+        String r12=st2.nextToken();
 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -96,9 +124,10 @@ public class MainActivity extends AppCompatActivity {
         userid = ( TextView)findViewById(R.id.userid);
         dogtype = ( TextView)findViewById(R.id.dogtype);
 
-username.setText(result4);
+        username.setText(result4);
         userid.setText(result2);
-
+        dogname.setText(r4);
+        dogtype.setText(r8);
 
 
         menu_button.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +143,14 @@ username.setText(result4);
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "dog 정보 편집 연결", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), DogInfoSettingActivity.class);
+
+                intent.putExtra("r3",r3);
+                intent.putExtra("r4",r4);
+                intent.putExtra("r5",r5);
+                intent.putExtra("r6",r6);
+                intent.putExtra("r7",r7);
+                intent.putExtra("r8",r8);
+                intent.putExtra("r10",r10);
 
                 startActivity(intent);
             }
@@ -167,11 +204,75 @@ username.setText(result4);
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "신청 현황 확인 페이지 연결", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), RequestActivity.class);
-                mDrawerLayout.closeDrawers();
-                startActivity(intent);
 
+                Thread t = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        String id=userid.getText().toString();
+                        try {
+                            URL url = new URL("http://210.125.213.92/BreederAndroid/request.jsp?userid="+id);
+                            HttpURLConnection conn =
+                                    (HttpURLConnection)  url.openConnection();
+                            //conn.setRequestProperty("Accept-Encoding", "UTF-8");
+                            conn.setDoOutput(true);
+                            conn.setChunkedStreamingMode(0);
+                            OutputStream out =
+                                    new BufferedOutputStream(conn.getOutputStream());
+                            PrintWriter xx = new PrintWriter(out );
+                            String mesg = "userid="+userid.getText().toString();
+                            xx.print(mesg);
+                            xx.close();
+                            Log.i("TAG", "conn >>" + conn);
+
+                            // InputStream in = new BufferedInputStream(conn.getInputStream());
+                            InputStream in = conn.getInputStream();
+                            Log.i("TAG" , "in >>"+ in);
+                            String xxx = streamToString(in);
+                            Log.i("TAG" , ">>"+ xxx);
+
+                            if(!("fail".equals(xxx.trim()))){
+
+                                Intent intent = new Intent(getApplicationContext(), RequestActivity.class);
+                                intent.putExtra("xxx",xxx);
+                               /* mDrawerLayout.closeDrawers();*/
+                                startActivity(intent);
+                                finish();
+                            }else{
+
+                            }
+
+
+                            in.close();
+                            conn.disconnect();
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+                t.start();
+                startActivity(intent);
             }
         });
 
+
+
     }
+    public String streamToString(InputStream is){
+        StringBuffer buffer = new StringBuffer();
+        try {
+            BufferedReader reader =
+                    new BufferedReader(new InputStreamReader(is));
+            String data = reader.readLine();
+            while(data != null){
+                buffer.append(data+"\n");
+                data = reader.readLine();
+            }
+            reader.close();
+        }catch(Exception e){ e.printStackTrace();}
+        return buffer.toString();
+    }//end streamToString
+
+
 }

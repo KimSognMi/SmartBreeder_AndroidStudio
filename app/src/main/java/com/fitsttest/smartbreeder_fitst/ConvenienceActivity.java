@@ -36,6 +36,10 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
     private MapView mMapView;
     private EditText mEditTextQuery;
     private Button mButtonSearch;
+    private Button cafe;
+    private Button hospital;
+    private Button park;
+    private Button shop;
     private HashMap<Integer, Item> mTagItemMap = new HashMap<Integer, Item>();
 
     private final int MENU_LOCATION = Menu.FIRST;
@@ -50,13 +54,120 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         setContentView(R.layout.convenience);
 
         mMapView = (MapView) findViewById(R.id.map_view);
+        cafe = (Button) findViewById(R.id.cafe);
+        hospital = (Button) findViewById(R.id.hospital);
+        park = (Button) findViewById(R.id.park);
+        shop = (Button) findViewById(R.id.shop);
         mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);
         mMapView.setMapViewEventListener(this);
         mMapView.setCurrentLocationEventListener(this);
         mMapView.setPOIItemEventListener(this);
         mMapView.setCalloutBalloonAdapter(new CustomCalloutBalloonAdapter());
+        cafe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String qcafe = cafe.getText().toString();
+                MapPoint.GeoCoordinate geoCoordinate = mMapView.getMapCenterPoint().getMapPointGeoCoord();
+                double latitude = geoCoordinate.latitude; // 위도
+                double longitude = geoCoordinate.longitude; // 경도
+                int radius = 10000; // 중심 좌표부터의 반경거리. 특정 지역을 중심으로 검색하려고 할 경우 사용. meter 단위 (0 ~ 10000)
+                int page = 1; // 페이지 번호 (1 ~ 3). 한페이지에 15개
+                String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
 
-        mEditTextQuery = (EditText) findViewById(R.id.editTextQuery);
+                Searcher searcher = new Searcher(); // net.daum.android.map.openapi.search.Searcher
+                searcher.searchKeyword(getApplicationContext(), qcafe, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+                    @Override
+                    public void onSuccess(List<Item> itemList) {
+                        mMapView.removeAllPOIItems(); // 기존 검색 결과 삭제
+                        showResult(itemList); // 검색 결과 보여줌
+                    }
+
+                    @Override
+                    public void onFail() {
+                        showToast("API_KEY의 제한 트래픽이 초과되었습니다.");
+                    }
+                });
+            }
+        });
+        hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String qhospital = hospital.getText().toString();
+                MapPoint.GeoCoordinate geoCoordinate = mMapView.getMapCenterPoint().getMapPointGeoCoord();
+                double latitude = geoCoordinate.latitude; // 위도
+                double longitude = geoCoordinate.longitude; // 경도
+                int radius = 10000; // 중심 좌표부터의 반경거리. 특정 지역을 중심으로 검색하려고 할 경우 사용. meter 단위 (0 ~ 10000)
+                int page = 1; // 페이지 번호 (1 ~ 3). 한페이지에 15개
+                String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
+
+                Searcher searcher = new Searcher(); // net.daum.android.map.openapi.search.Searcher
+                searcher.searchKeyword(getApplicationContext(), qhospital, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+                    @Override
+                    public void onSuccess(List<Item> itemList) {
+                        mMapView.removeAllPOIItems(); // 기존 검색 결과 삭제
+                        showResult(itemList); // 검색 결과 보여줌
+                    }
+
+                    @Override
+                    public void onFail() {
+                        showToast("API_KEY의 제한 트래픽이 초과되었습니다.");
+                    }
+                });
+            }
+        });
+        park.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String qpark = park.getText().toString();
+                MapPoint.GeoCoordinate geoCoordinate = mMapView.getMapCenterPoint().getMapPointGeoCoord();
+                double latitude = geoCoordinate.latitude; // 위도
+                double longitude = geoCoordinate.longitude; // 경도
+                int radius = 10000; // 중심 좌표부터의 반경거리. 특정 지역을 중심으로 검색하려고 할 경우 사용. meter 단위 (0 ~ 10000)
+                int page = 1; // 페이지 번호 (1 ~ 3). 한페이지에 15개
+                String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
+
+                Searcher searcher = new Searcher(); // net.daum.android.map.openapi.search.Searcher
+                searcher.searchKeyword(getApplicationContext(), qpark, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+                    @Override
+                    public void onSuccess(List<Item> itemList) {
+                        mMapView.removeAllPOIItems(); // 기존 검색 결과 삭제
+                        showResult(itemList); // 검색 결과 보여줌
+                    }
+
+                    @Override
+                    public void onFail() {
+                        showToast("API_KEY의 제한 트래픽이 초과되었습니다.");
+                    }
+                });
+            }
+        });
+        shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String qshop = shop.getText().toString();
+                MapPoint.GeoCoordinate geoCoordinate = mMapView.getMapCenterPoint().getMapPointGeoCoord();
+                double latitude = geoCoordinate.latitude; // 위도
+                double longitude = geoCoordinate.longitude; // 경도
+                int radius = 10000; // 중심 좌표부터의 반경거리. 특정 지역을 중심으로 검색하려고 할 경우 사용. meter 단위 (0 ~ 10000)
+                int page = 1; // 페이지 번호 (1 ~ 3). 한페이지에 15개
+                String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
+
+                Searcher searcher = new Searcher(); // net.daum.android.map.openapi.search.Searcher
+                searcher.searchKeyword(getApplicationContext(), qshop, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+                    @Override
+                    public void onSuccess(List<Item> itemList) {
+                        mMapView.removeAllPOIItems(); // 기존 검색 결과 삭제
+                        showResult(itemList); // 검색 결과 보여줌
+                    }
+
+                    @Override
+                    public void onFail() {
+                        showToast("API_KEY의 제한 트래픽이 초과되었습니다.");
+                    }
+                });
+            }
+        });
+       /* mEditTextQuery = (EditText) findViewById(R.id.editTextQuery);
         mButtonSearch = (Button) findViewById(R.id.buttonSearch); // 검색버튼
         mButtonSearch.setOnClickListener(new View.OnClickListener() { // 검색버튼 클릭 이벤트 리스너
             @Override
@@ -88,7 +199,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
                     }
                 });
             }
-        });
+        });*/
     }
 
     @Override
@@ -180,14 +291,14 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         mMapView.setMapCenterPointAndZoomLevel(MapPoint.mapPointWithGeoCoord(37.537229, 127.005515), 2, true);
         mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
         Searcher searcher = new Searcher();
-        String query = mEditTextQuery.getText().toString();
+       // String query = mEditTextQuery.getText().toString();
         double latitude = 37.537229;
         double longitude = 127.005515;
         int radius = 10000; // 중심 좌표부터의 반경거리. 특정 지역을 중심으로 검색하려고 할 경우 사용. meter 단위 (0 ~ 10000)
         int page = 1;
         String apikey = MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY;
 
-        searcher.searchKeyword(getApplicationContext(), query, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
+       /* searcher.searchKeyword(getApplicationContext(), query, latitude, longitude, radius, page, apikey, new OnFinishSearchListener() {
             @Override
             public void onSuccess(final List<Item> itemList) {
                 showResult(itemList);
@@ -197,7 +308,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
             public void onFail() {
                 showToast("API_KEY의 제한 트래픽이 초과되었습니다.");
             }
-        });
+        });*/
     }
 
     private void showToast(final String text) {

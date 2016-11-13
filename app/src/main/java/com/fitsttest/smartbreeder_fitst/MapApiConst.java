@@ -5,5 +5,5 @@ package com.fitsttest.smartbreeder_fitst;
  */
 public class MapApiConst {
 	// http://developers.daum.net/console
-    public static final String DAUM_MAPS_ANDROID_APP_API_KEY = "80cf51de78f5d9aeaacfba4074934ec2";
+    public static final String DAUM_MAPS_ANDROID_APP_API_KEY = "00da2a2706b227b41e0c8eac6aa45838";
 }

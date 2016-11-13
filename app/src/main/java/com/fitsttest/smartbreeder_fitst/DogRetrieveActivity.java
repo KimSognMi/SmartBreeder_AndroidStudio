@@ -13,10 +13,9 @@ import android.widget.Toast;
 
 /**
  * Created by ksmi0_000 on 2016-11-06.
- *나는나는나는??
  */
 
-public class DogInfoSettingActivity extends AppCompatActivity{
+public class DogRetrieveActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     ImageButton menu_button;
 
@@ -25,10 +24,10 @@ public class DogInfoSettingActivity extends AppCompatActivity{
     LinearLayout navi_search;
     LinearLayout navi_request;
 
-    TextView kkc;
+
     TextView dogname;
+    TextView message;
     TextView type;
-    TextView dogbirth;
     TextView dogage;
     TextView featrue;
     TextView gender;
@@ -36,41 +35,42 @@ public class DogInfoSettingActivity extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.doginfosettiong);
+        setContentView(R.layout.dogretrieve);
 
-        String r3=getIntent().getExtras().getString("r3");
-        String r4=getIntent().getExtras().getString("r4");
-        String r5=getIntent().getExtras().getString("r5");
-        String r6=getIntent().getExtras().getString("r6");
-        String r7=getIntent().getExtras().getString("r7");
-        String r8=getIntent().getExtras().getString("r8");
-        String r10=getIntent().getExtras().getString("r10");
+        String rq1=getIntent().getExtras().getString("rq1");
+        String rq2=getIntent().getExtras().getString("rq2");
+        String rq3=getIntent().getExtras().getString("rq3");
+        String rq5=getIntent().getExtras().getString("rq5");
+        String rq6=getIntent().getExtras().getString("rq6");
+        String rq7=getIntent().getExtras().getString("rq7");
+        String rq9=getIntent().getExtras().getString("rq9");
 
 
-        kkc = ( TextView)findViewById(R.id.kkc);
+
         dogname = ( TextView)findViewById(R.id.dogname);
         type = ( TextView)findViewById(R.id.type);
-        dogbirth = ( TextView)findViewById(R.id.dogbirth);
+        message = ( TextView)findViewById(R.id.message);
+
         dogage = ( TextView)findViewById(R.id.dogage);
         featrue = ( TextView)findViewById(R.id.featrue);
         gender = ( TextView)findViewById(R.id.gender);
 
-        kkc.setInputType(0);
+
         dogname.setInputType(0);
         type.setInputType(0);
-        dogbirth.setInputType(0);
+        message.setInputType(0);
+
         dogage.setInputType(0);
         featrue.setInputType(0);
         gender.setInputType(0);
 
-        kkc.setText(r3);
-        dogname.setText(r4);
-        type.setText(r8);
-        dogbirth.setText(r7);
-        dogage.setText(r5);
-        featrue.setText(r10);
-        gender.setText(r6);
 
+        dogname.setText(rq3);
+        type.setText(rq5);
+        message.setText(rq1);
+        dogage.setText(rq9);
+        featrue.setText(rq7);
+        gender.setText(rq2);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         menu_button = (ImageButton) findViewById(R.id.menu_button);
@@ -78,6 +78,7 @@ public class DogInfoSettingActivity extends AppCompatActivity{
         navi_shop = (LinearLayout) findViewById(R.id.navi_shop);
         navi_search = (LinearLayout) findViewById(R.id.navi_search);
         navi_request = (LinearLayout) findViewById(R.id.navi_request);
+
 
         menu_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +90,7 @@ public class DogInfoSettingActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "족보창 연결", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), TreeMappingActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DogRetrieveActivity.class);
                 mDrawerLayout.closeDrawers();
                 startActivity(intent);
             }

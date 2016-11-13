@@ -13,10 +13,10 @@ import android.widget.Toast;
 
 /**
  * Created by ksmi0_000 on 2016-11-06.
- *나는나는나는??
+ * 나는나는나는??
  */
 
-public class DogInfoSettingActivity extends AppCompatActivity{
+public class DogInfoSettingActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     ImageButton menu_button;
 
@@ -38,22 +38,22 @@ public class DogInfoSettingActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doginfosettiong);
 
-        String r3=getIntent().getExtras().getString("r3");
-        String r4=getIntent().getExtras().getString("r4");
-        String r5=getIntent().getExtras().getString("r5");
-        String r6=getIntent().getExtras().getString("r6");
-        String r7=getIntent().getExtras().getString("r7");
-        String r8=getIntent().getExtras().getString("r8");
-        String r10=getIntent().getExtras().getString("r10");
+        String r3 = getIntent().getExtras().getString("r3");
+        String r4 = getIntent().getExtras().getString("r4");
+        String r5 = getIntent().getExtras().getString("r5");
+        String r6 = getIntent().getExtras().getString("r6");
+        String r7 = getIntent().getExtras().getString("r7");
+        String r8 = getIntent().getExtras().getString("r8");
+        String r10 = getIntent().getExtras().getString("r10");
 
 
-        kkc = ( TextView)findViewById(R.id.kkc);
-        dogname = ( TextView)findViewById(R.id.dogname);
-        type = ( TextView)findViewById(R.id.type);
-        dogbirth = ( TextView)findViewById(R.id.dogbirth);
-        dogage = ( TextView)findViewById(R.id.dogage);
-        featrue = ( TextView)findViewById(R.id.featrue);
-        gender = ( TextView)findViewById(R.id.gender);
+        kkc = (TextView) findViewById(R.id.kkc);
+        dogname = (TextView) findViewById(R.id.dogname);
+        type = (TextView) findViewById(R.id.type);
+        dogbirth = (TextView) findViewById(R.id.dogbirth);
+        dogage = (TextView) findViewById(R.id.dogage);
+        featrue = (TextView) findViewById(R.id.featrue);
+        gender = (TextView) findViewById(R.id.gender);
 
         kkc.setInputType(0);
         dogname.setInputType(0);

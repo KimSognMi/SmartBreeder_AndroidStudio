@@ -16,7 +16,7 @@ import android.widget.Toast;
  * Created by ksmi0_000 on 2016-11-06.
  */
 
-public class UserInfoSettingActivity extends AppCompatActivity{
+public class UserInfoSettingActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     ImageButton menu_button;
 
@@ -35,19 +35,19 @@ public class UserInfoSettingActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userinfosettiong);
 
-        String result2=getIntent().getExtras().getString("result2");
+        String result2 = getIntent().getExtras().getString("result2");
         Log.i("TAG", "result2 >>" + result2);
 
-        String result4=getIntent().getExtras().getString("result4");
-        String result5=getIntent().getExtras().getString("result5");
-        String result8=getIntent().getExtras().getString("result8");
-        String result9=getIntent().getExtras().getString("result9");
+        String result4 = getIntent().getExtras().getString("result4");
+        String result5 = getIntent().getExtras().getString("result5");
+        String result8 = getIntent().getExtras().getString("result8");
+        String result9 = getIntent().getExtras().getString("result9");
 
-        userid = ( TextView)findViewById(R.id.userid);
-        username = ( TextView)findViewById(R.id.username);
-        phone = ( TextView)findViewById(R.id.phone);
-        address1 = ( TextView)findViewById(R.id.address1);
-        address2 = ( TextView)findViewById(R.id.address2);
+        userid = (TextView) findViewById(R.id.userid);
+        username = (TextView) findViewById(R.id.username);
+        phone = (TextView) findViewById(R.id.phone);
+        address1 = (TextView) findViewById(R.id.address1);
+        address2 = (TextView) findViewById(R.id.address2);
 
         userid.setInputType(0);
         username.setInputType(0);
@@ -62,7 +62,6 @@ public class UserInfoSettingActivity extends AppCompatActivity{
         phone.setText(result5);
         address1.setText(result8);
         address2.setText(result9);
-
 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);

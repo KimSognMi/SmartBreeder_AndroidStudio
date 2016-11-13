@@ -37,23 +37,22 @@ public class DogRetrieveActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dogretrieve);
 
-        String rq1=getIntent().getExtras().getString("rq1");
-        String rq2=getIntent().getExtras().getString("rq2");
-        String rq3=getIntent().getExtras().getString("rq3");
-        String rq5=getIntent().getExtras().getString("rq5");
-        String rq6=getIntent().getExtras().getString("rq6");
-        String rq7=getIntent().getExtras().getString("rq7");
-        String rq9=getIntent().getExtras().getString("rq9");
+        String rq1 = getIntent().getExtras().getString("rq1");
+        String rq2 = getIntent().getExtras().getString("rq2");
+        String rq3 = getIntent().getExtras().getString("rq3");
+        String rq5 = getIntent().getExtras().getString("rq5");
+        String rq6 = getIntent().getExtras().getString("rq6");
+        String rq7 = getIntent().getExtras().getString("rq7");
+        String rq9 = getIntent().getExtras().getString("rq9");
 
 
+        dogname = (TextView) findViewById(R.id.dogname);
+        type = (TextView) findViewById(R.id.type);
+        message = (TextView) findViewById(R.id.message);
 
-        dogname = ( TextView)findViewById(R.id.dogname);
-        type = ( TextView)findViewById(R.id.type);
-        message = ( TextView)findViewById(R.id.message);
-
-        dogage = ( TextView)findViewById(R.id.dogage);
-        featrue = ( TextView)findViewById(R.id.featrue);
-        gender = ( TextView)findViewById(R.id.gender);
+        dogage = (TextView) findViewById(R.id.dogage);
+        featrue = (TextView) findViewById(R.id.featrue);
+        gender = (TextView) findViewById(R.id.gender);
 
 
         dogname.setInputType(0);

@@ -242,6 +242,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
     private void onFinishReverseGeoCoding(String result) {
         Toast.makeText(getApplicationContext(), "Reverse Geo-coding : " + result, Toast.LENGTH_SHORT).show();
     }
+
     class CustomCalloutBalloonAdapter implements CalloutBalloonAdapter {
 
         private final View mCalloutBalloon;
@@ -289,7 +290,7 @@ public class ConvenienceActivity extends FragmentActivity implements MapView.Map
         mMapView.setMapCenterPointAndZoomLevel(MapPoint.mapPointWithGeoCoord(37.537229, 127.005515), 2, true);
         mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
         Searcher searcher = new Searcher();
-       // String query = mEditTextQuery.getText().toString();
+        // String query = mEditTextQuery.getText().toString();
         double latitude = 37.537229;
         double longitude = 127.005515;
         int radius = 10000; // 중심 좌표부터의 반경거리. 특정 지역을 중심으로 검색하려고 할 경우 사용. meter 단위 (0 ~ 10000)

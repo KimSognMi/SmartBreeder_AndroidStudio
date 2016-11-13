@@ -51,11 +51,11 @@
 
             <EditText
                 android:id="@+id/userid"
-                android:text="aaa@naver.com"
                 android:layout_width="240dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="60dp"
-                android:background="@null" />
+                android:background="@null"
+                android:text="aaa@naver.com" />
         </FrameLayout>
 
         <FrameLayout
@@ -71,11 +71,11 @@
 
             <EditText
                 android:id="@+id/passwd"
-                android:text="1234"
                 android:layout_width="240dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="60dp"
-                android:background="@null" />
+                android:background="@null"
+                android:text="1234" />
         </FrameLayout>
 
         <ImageButton

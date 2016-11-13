@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/navi_background">
+    android:background="@drawable/navi_background"
+    android:orientation="vertical">
 
     <android.support.percent.PercentFrameLayout
         android:id="@+id/dogImage"
-        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true">
 
         <RelativeLayout
             android:id="@+id/dog"
@@ -53,8 +53,7 @@
     <android.support.percent.PercentFrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dogImage"
-        >
+        android:layout_below="@+id/dogImage">
 
 
         <LinearLayout

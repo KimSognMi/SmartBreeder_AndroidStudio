@@ -6,10 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background">
+
         <LinearLayout
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -47,10 +49,12 @@
         </LinearLayout>
 
     </RelativeLayout>
+
     <LinearLayout
-        android:layout_gravity="start"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        <include layout="@layout/navigation_item"/>
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/navigation_item" />
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

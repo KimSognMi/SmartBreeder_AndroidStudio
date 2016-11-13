@@ -22,6 +22,7 @@ public class TreeMappingActivity extends AppCompatActivity {
     LinearLayout navi_shop;
     LinearLayout navi_search;
     LinearLayout navi_request;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.treemapping);

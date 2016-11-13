@@ -23,14 +23,14 @@ public class RequestActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ImageButton menu_button;
 
-    private  LinearLayout navi_map;
-    private  LinearLayout navi_shop;
-    private  LinearLayout navi_search;
-    private  LinearLayout navi_request;
+    private LinearLayout navi_map;
+    private LinearLayout navi_shop;
+    private LinearLayout navi_search;
+    private LinearLayout navi_request;
 
     private ImageButton button2;
     private ImageButton button3;
-    private  Button button22;
+    private Button button22;
 
     String rq1;
     String rq2;
@@ -52,43 +52,42 @@ public class RequestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.request);
 
-        String xxx=getIntent().getExtras().getString("xxx");
+        String xxx = getIntent().getExtras().getString("xxx");
         Log.i("TAG", "xxx >>" + xxx);
 
-        String A=xxx;
-        StringTokenizer st0=new StringTokenizer(A,"&");
-        String result01=st0.nextToken();
-        String result02=st0.nextToken();
-        Log.i("TAG" , ">>"+ result01);
-        Log.i("TAG" , ">>"+ result02);
+        String A = xxx;
+        StringTokenizer st0 = new StringTokenizer(A, "&");
+        String result01 = st0.nextToken();
+        String result02 = st0.nextToken();
+        Log.i("TAG", ">>" + result01);
+        Log.i("TAG", ">>" + result02);
 
 
-        StringTokenizer st1=new StringTokenizer(result01,"/");
-        rq1=st1.nextToken();
-        rq2=st1.nextToken();
-        rq3=st1.nextToken();
-        String rq4=st1.nextToken();
-        rq5=st1.nextToken();
-        rq6=st1.nextToken();
-        rq7=st1.nextToken();
-        String rq8=st1.nextToken();
-        rq9=st1.nextToken();
-        String rq10=st1.nextToken();
-        String rq11=st1.nextToken();
+        StringTokenizer st1 = new StringTokenizer(result01, "/");
+        rq1 = st1.nextToken();
+        rq2 = st1.nextToken();
+        rq3 = st1.nextToken();
+        String rq4 = st1.nextToken();
+        rq5 = st1.nextToken();
+        rq6 = st1.nextToken();
+        rq7 = st1.nextToken();
+        String rq8 = st1.nextToken();
+        rq9 = st1.nextToken();
+        String rq10 = st1.nextToken();
+        String rq11 = st1.nextToken();
 
-        StringTokenizer st2=new StringTokenizer(result02,"/");
-        rq01=st2.nextToken();
-        rq02=st2.nextToken();
-        rq03=st2.nextToken();
-        String rq04=st2.nextToken();
-        rq05=st2.nextToken();
-        rq06=st2.nextToken();
-        rq07=st2.nextToken();
-        String rq08=st2.nextToken();
-        rq09=st2.nextToken();
-        String rq010=st2.nextToken();
-        String rq011=st2.nextToken();
-
+        StringTokenizer st2 = new StringTokenizer(result02, "/");
+        rq01 = st2.nextToken();
+        rq02 = st2.nextToken();
+        rq03 = st2.nextToken();
+        String rq04 = st2.nextToken();
+        rq05 = st2.nextToken();
+        rq06 = st2.nextToken();
+        rq07 = st2.nextToken();
+        String rq08 = st2.nextToken();
+        rq09 = st2.nextToken();
+        String rq010 = st2.nextToken();
+        String rq011 = st2.nextToken();
 
 
         button3 = (ImageButton) findViewById(R.id.button3);
@@ -181,7 +180,6 @@ public class RequestActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }

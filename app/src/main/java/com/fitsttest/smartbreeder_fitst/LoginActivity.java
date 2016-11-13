@@ -35,9 +35,8 @@ import java.util.StringTokenizer;
 
 /**
  * Created by ksmi0_000 on 2016-11-02.
- *
+ * <p>
  * 자 여기에서 변경을 해볼껭
- *
  */
 
 public class LoginActivity extends AppCompatActivity {
@@ -45,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText passwd;
     ImageButton signbutton;
     String result;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -60,44 +60,44 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                String id=userid.getText().toString();
+                String id = userid.getText().toString();
                 String pw = passwd.getText().toString();
 
                 try {
-                    URL url = new URL("http://210.125.213.92/BreederAndroid/login.jsp?userid="+id+"&passwd="+pw);
+                    URL url = new URL("http://210.125.213.92/BreederAndroid/login.jsp?userid=" + id + "&passwd=" + pw);
                     HttpURLConnection conn =
-                            (HttpURLConnection)  url.openConnection();
+                            (HttpURLConnection) url.openConnection();
                     //conn.setRequestProperty("Accept-Encoding", "UTF-8");
                     conn.setDoOutput(true);
                     conn.setChunkedStreamingMode(0);
                     OutputStream out =
                             new BufferedOutputStream(conn.getOutputStream());
-                    PrintWriter xx = new PrintWriter(out );
-                    String mesg = "userid="+userid.getText().toString()+"&passwd="+passwd.getText().toString();
+                    PrintWriter xx = new PrintWriter(out);
+                    String mesg = "userid=" + userid.getText().toString() + "&passwd=" + passwd.getText().toString();
                     xx.print(mesg);
                     xx.close();
                     Log.i("TAG", "conn >>" + conn);
 
                     // InputStream in = new BufferedInputStream(conn.getInputStream());
                     InputStream in = conn.getInputStream();
-                    Log.i("TAG" , "in >>"+ in);
+                    Log.i("TAG", "in >>" + in);
                     String xxx = streamToString(in);
-                    Log.i("TAG" , ">>"+ xxx);
+                    Log.i("TAG", ">>" + xxx);
 
-                    if(!("fail".equals(xxx.trim()))){
+                    if (!("fail".equals(xxx.trim()))) {
 
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                        intent.putExtra("xxx",xxx);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.putExtra("xxx", xxx);
                         startActivity(intent);
                         finish();
-                    }else{
+                    } else {
 
                     }
 
 
                     in.close();
                     conn.disconnect();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -107,22 +107,22 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public String streamToString(InputStream is){
+    public String streamToString(InputStream is) {
         StringBuffer buffer = new StringBuffer();
         try {
             BufferedReader reader =
                     new BufferedReader(new InputStreamReader(is));
             String data = reader.readLine();
-            while(data != null){
-                buffer.append(data+"\n");
+            while (data != null) {
+                buffer.append(data + "\n");
                 data = reader.readLine();
             }
             reader.close();
-        }catch(Exception e){ e.printStackTrace();}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return buffer.toString();
     }//end streamToString
-
-
 
 
 }//end class

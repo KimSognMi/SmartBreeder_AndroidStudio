@@ -71,14 +71,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kkc 인증번호 : "
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/kkc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="sdlkfmlsdmfks"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -87,21 +87,21 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/settingid"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이름 : "
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/dogname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="3"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,14 +110,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/settingname"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="종 : "
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/type"
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:hint="3"
                 android:inputType="textPersonName"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,14 +134,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/settingphone"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="성별 : "
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/gender"
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:hint="3"
                 android:inputType="textPersonName"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -158,47 +158,43 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/settinggender"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="생년월일 : "
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
 
             <EditText
                 android:id="@+id/dogbirth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-
                 android:hint="3"
                 android:scrollHorizontally="false"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" / "
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/dogage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-
                 android:hint="3"
                 android:scrollHorizontally="false"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="세 "
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
@@ -209,14 +205,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/settingaddress"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="특징 : "
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/featrue"
@@ -224,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:hint="3"
                 android:inputType="textPersonName"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
     </RelativeLayout>
